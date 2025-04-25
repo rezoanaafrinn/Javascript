@@ -1,27 +1,48 @@
 // This is a simple JavaScript program that prints the name, income, expense, and savings of a person.
 
 const name = "Rezoana Afrin";
-let income = 7000;
+const income = 7000;
 // multiple expenses
-let rent = 1200;
-let groceries = 300;
-let transportation = 150;
-let entertainment = 200;
+const rent = 1200;
+const groceries = 300;
+const transportation = 150;
+const entertainment = 200;
 
 // calculate total expenses
-let totalExpense = rent + groceries + transportation + entertainment;
+const totalExpense = rent + groceries + transportation + entertainment;
 
 // Tax deduction (10% of income)
-let tax = income * 0.10;
+const tax = income * 0.10;
 
 // Net income after tax
-let netIncome = income - tax;
+const netIncome = income - tax;
 
 // Calculate remaining balance after expenses
-let remainingBalance = netIncome - totalExpense;
+const remainingBalance = netIncome - totalExpense;
 
 // Calculate savings (20% of remaining balance)
-let savings = remainingBalance * 0.20;
+const savings = remainingBalance * 0.20;
+
+// financial status based on savings
+let financialStatus = '';
+if (savings >= 1000){
+    financialStatus =`Excellent! You are on track with your savings!`;
+}
+else if (savings >= 500){
+    financialStatus =`Good! You are doing well with your savings!`;
+}
+else if (savings >= 100){
+    financialStatus =`You need to save more!`;
+}
+else {
+    financialStatus =`You need to save a lot more!`;
+}
+
+// Check expenses exceeding income
+let OverSpendingMessage = '';
+if (totalExpense > income) {
+    OverSpendingMessage = `Warning: Your expenses exceed your income!`;
+}
 
 console.log(`Personal Budget Tracker`);
 console.log(`User: ${name}`);
@@ -31,3 +52,7 @@ console.log(`Tax Deduction(10%): $${tax}`);
 console.log(`Net Income after Tax: $${netIncome}`);
 console.log(`Remaining Balance: $${remainingBalance}`);
 console.log(`Savings(20% of balance): $${savings}`);
+console.log(`Financial Status: ${financialStatus}`);
+if (OverSpendingMessage) {
+    console.log(OverSpendingMessage);
+}
