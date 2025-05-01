@@ -1,9 +1,19 @@
 // This is a simple JavaScript program that prints the name, income, expense, and savings of a person.
 
-const name = "Rezoana Afrin";
-const income = 7000;
+const name = prompt("Enter your name:");
+const income = parseFloat(prompt("Enter your monthly income:"));
+
+// Ask how many expenses the user has
+const numberOfExpenses = parseInt(prompt("Enter the number of expenses: "));
+
+if (isNaN(income) || isNaN(numberOfExpenses) || numberOfExpenses <= 0 || income < 0) {
+    console.log("Invalid input. Please enter a valid income and number of expenses.");
+}
+else {
+    let totalExpense = 0;
+}
 // multiple expenses
-const rent = 1200;
+const rent = 1200; 
 const groceries = 300;
 const transportation = 150;
 const entertainment = 200;
@@ -55,4 +65,4 @@ console.log(`Savings(20% of balance): $${savings}`);
 console.log(`Financial Status: ${financialStatus}`);
 if (OverSpendingMessage) {
     console.log(OverSpendingMessage);
-}
+} 
