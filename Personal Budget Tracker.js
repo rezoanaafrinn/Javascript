@@ -20,6 +20,7 @@ if (
 
     //collect expenses dynamically
     for (let i = 1; i <= numberOfExpenses; i++) {
+        const expenses = [];
         let expense = parseFloat(prompt(`Enter expense ${i}: `));
         if (isNaN(expense) || expense < 0) {
             console.log(
@@ -27,7 +28,11 @@ if (
             );
             expense = 0; // set invalid expense to 0
         }
-        totalExpense += expense; // accumulate total expenses
+        expenses.push(expense);
+        // calculate total expenses using array
+        for (let i=0; i<expenses.length;i++){
+            totalExpense += expenses[i]; 
+        }
     }
     // Tax deduction (10% of income)
     const tax = income * 0.1;
